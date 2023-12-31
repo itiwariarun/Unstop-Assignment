@@ -9,9 +9,9 @@ import {
   WebIcon,
   Share,
   AddIcon,
-} from "./Icon";
+} from "@/Dash/app/components/Icon";
 
-import { Button } from "./Buttons/SideNavButtons";
+import { Button } from "@/Dash/app/components/Buttons/SideNavButtons";
 type Props = {};
 
 function SideNav({}: Props) {

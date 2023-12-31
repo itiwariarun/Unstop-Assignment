@@ -2,14 +2,14 @@
 import React, { Dispatch, SetStateAction, useEffect, FormEvent } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { IconCross } from "./Icon";
-import SelectBox from "./SelectBox";
-import Input from "./Input";
-import MutliSelectInput from "./MutliSelectInput";
-import useLocalStorageList from "../utils/random-functions";
-import { isValidArray, isValidObject } from "./../utils/random-functions";
-import { purpose, question } from "./../utils/data";
-import { Assessment } from "./../page";
+import { IconCross } from "@/Dash/app/components/Icon";
+import SelectBox from "@/Dash/app/components/SelectBox";
+import Input from "@/Dash/app/components/Input";
+import MutliSelectInput from "@/Dash/app/components/MutliSelectInput";
+import useLocalStorageList from "@/Dash/app/utils/random-functions";
+import { isValidArray, isValidObject } from "@/Dash/app/utils/random-functions";
+import { purpose, question } from "@/Dash/app/utils/data";
+import { Assessment } from "@/Dash/app/page";
 
 interface IAppProps {
   isOpen?: boolean;

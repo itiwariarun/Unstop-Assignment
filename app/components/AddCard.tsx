@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { AddIcon } from "./Icon";
-import FormModal from "./FormModal";
-import { Assessment } from "../page";
+import { AddIcon } from "@/Dash/app/components/Icon";
+import FormModal from "@/Dash/app/components/FormModal";
+import { Assessment } from "@/Dash/app/page";
 
 interface IAppProps {
   assessments?: Assessment[];
@@ -40,8 +40,11 @@ const AddCard: React.FunctionComponent<IAppProps> = (props) => {
       <div className="th-absolute th-bottom-1/4 th-right-4 md:th-hidden">
         <button
           onClick={openModal}
+          aria-label="add modal button"
           className="th-h-20 th-w-20 th-flex th-items-center th-justify-center th-bg-Secondary-1 th-rounded-full"
         >
+          {" "}
+          <span className="th-sr-only">add modal button</span>
           <AddIcon path="th-fill-white" />
         </button>
       </div>

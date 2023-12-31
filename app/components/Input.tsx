@@ -1,5 +1,5 @@
 import * as React from "react";
-import { isValidArray } from "./../utils/random-functions";
+import { isValidArray } from "@/Dash/app/utils/random-functions";
 
 interface IAppProps {
   name?: string;

@@ -1,11 +1,11 @@
 "use client";
 import React, { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
-import { DownIcon, CheckIcon } from "./Icon";
+import { DownIcon, CheckIcon } from "@/Dash/app/components/Icon";
 import {
   isValidArray,
   extractDescriptionsAndPurposes,
-} from "./../utils/random-functions";
+} from "@/Dash/app/utils/random-functions";
 
 interface IAppProps {
   name: string;

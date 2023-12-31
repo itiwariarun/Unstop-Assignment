@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { AssessmentStack, UserIcon, WebIcon, Share } from "./Icon";
-import IconChip, { ChipText } from "./IconChip";
-import useLocalStorageList from "../utils/random-functions";
-import { purpose } from "../utils/data";
-import { Assessment } from "./../page";
+import {
+  AssessmentStack,
+  UserIcon,
+  WebIcon,
+  Share,
+} from "@/Dash/app/components/Icon";
+import IconChip, { ChipText } from "@/Dash/app/components/IconChip";
+import useLocalStorageList from "@/Dash/app/utils/random-functions";
+import { purpose } from "@/Dash/app/utils/data";
+import { Assessment } from "@/Dash/app/page";
 
 type Props = {};
 

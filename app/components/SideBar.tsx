@@ -1,5 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { IconCrossSmall } from "./Icon";
+import { IconCrossSmall } from "@/Dash/app/components/Icon";
 import { Fragment } from "react";
 
 type DrawerProps = {

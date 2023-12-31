@@ -1,5 +1,8 @@
 import * as React from "react";
-import { generateColor, printFirstLetters } from "./../utils/random-functions";
+import {
+  generateColor,
+  printFirstLetters,
+} from "@/Dash/app/utils/random-functions";
 
 interface IAppProps {
   rect?: string;

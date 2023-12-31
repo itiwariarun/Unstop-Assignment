@@ -1,6 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useRef, useState } from "react";
-import { IconStack } from "./Icon";
+import { IconStack } from "@/Dash/app/components/Icon";
 import React from "react";
 
 type Props = {
@@ -13,6 +13,7 @@ const MenuItems = (props: Props) => {
     <Menu as="div" className="th-relative th-inline-block th-text-left">
       <span>
         <Menu.Button>
+          <span className="th-sr-only">menu button</span>
           <IconStack />
         </Menu.Button>
       </span>

@@ -1,9 +1,9 @@
 "use Client";
 import React, { useState, Dispatch, SetStateAction } from "react";
-import Input from "./Input";
-import { AddIcon, IconCrossSmall } from "./Icon";
+import Input from "@/Dash/app/components/Input";
+import { AddIcon, IconCrossSmall } from "@/Dash/app/components/Icon";
 import Chip from "./Chip";
-import { isValidArray } from "./../utils/random-functions";
+import { isValidArray } from "@/Dash/app/utils/random-functions";
 
 interface IAppProps {
   label?: string;

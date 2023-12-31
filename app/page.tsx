@@ -1,17 +1,22 @@
 "use client";
 import Image from "next/image";
-import Card from "./components/Card";
+import Card from "@/Dash/app/components/Card";
 import Link from "next/link";
-import { FilterIcon, SearchIcon, StatsIcon, MenuIcon } from "./components/Icon";
+import {
+  FilterIcon,
+  SearchIcon,
+  StatsIcon,
+  MenuIcon,
+} from "@/Dash/app/components/Icon";
 
-import AddCard from "./components/AddCard";
+import AddCard from "@/Dash/app/components/AddCard";
 import { useState, useEffect } from "react";
-import useLocalStorageList from "./utils/random-functions";
-import Nav from "./components/Nav";
-import Stats from "./components/Stats";
+import useLocalStorageList from "@/Dash/app/utils/random-functions";
+import Nav from "@/Dash/app/components/Nav";
+import Stats from "@/Dash/app/components/Stats";
 import { Transition } from "@headlessui/react";
-import Sidebar from "./components/SideBar";
-import SideNav from "./components/SideNav";
+import Sidebar from "@/Dash/app/components/SideBar";
+import SideNav from "@/Dash/app/components/SideNav";
 // Interface for the assessment objects
 export interface Assessment {
   // Define your assessment properties here
@@ -41,7 +46,12 @@ export default function Home() {
       </aside>
       <div className="th-flex th-px-3.5 md:th-hidden th-py-4 th-justify-between th-items-center th-w-full">
         <div className="th-flex th-items-center th-gap-x-2.5">
-          <button onClick={() => setIsOpen(!isOpen)}>
+          <button
+            aria-label="show sidebar button"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {" "}
+            <span className="th-sr-only">show sidebar button</span>
             <MenuIcon />
           </button>
           <p className="th-text-base th-font-semibold th-text-Text-100 th-leading-6">
@@ -104,16 +114,29 @@ export default function Home() {
                   My Assessment
                 </p>
                 <div className="md:th-hidden th-flex th-items-center th-gap-1.5">
-                  <button className="th-bg-white th-h-12 th-w-12 th-flex th-justify-center th-items-center">
+                  <button
+                    aria-label="search button"
+                    className="th-bg-white th-h-12 th-w-12 th-flex th-justify-center th-items-center"
+                  >
+                    <span className="th-sr-only">search button</span>
+
                     <SearchIcon path="th-fill-Text-100" />
                   </button>
-                  <button className="th-bg-white th-h-12 th-w-12 th-flex th-justify-center th-items-center">
+                  <button
+                    aria-label="filter button"
+                    className="th-bg-white th-h-12 th-w-12 th-flex th-justify-center th-items-center"
+                  >
+                    <span className="th-sr-only">filter button</span>
+
                     <FilterIcon path="th-fill-Text-100" />
                   </button>
                   <button
+                    aria-label="show stats  button"
                     onClick={() => setShowState(!showState)}
                     className="th-bg-white th-h-12 th-w-12 th-flex th-justify-center th-items-center"
                   >
+                    {" "}
+                    <span className="th-sr-only"> show stats button</span>
                     <StatsIcon path="th-fill-Text-100" />
                   </button>
                 </div>

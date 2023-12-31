@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Briefcase, Calender, Share, CircleChip, IconStack } from "./Icon";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
-import IconChip from "./IconChip";
-import useLocalStorageList from "../utils/random-functions";
-import { Assessment } from "./../page";
-import FormModal from "./FormModal";
-import MenuItems from "./Menu";
+import IconChip from "@/Dash/app/components/IconChip";
+import useLocalStorageList from "@/Dash/app/utils/random-functions";
+import { Assessment } from "@/Dash/app/page";
+import FormModal from "@/Dash/app/components/FormModal";
+import MenuItems from "@/Dash/app/components/Menu";
 import {
   isValidArray,
   timeToHoursAndMinutes,
