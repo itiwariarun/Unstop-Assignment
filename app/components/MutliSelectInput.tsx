@@ -70,7 +70,7 @@ const MutliSelectInput: React.FunctionComponent<IAppProps> = (props) => {
 
         <button
           type="button"
-          className="th-absolute th-top-3 th-right-3 group-focus:th-opacity-100 th-bottom-0 th-opacity-0 th-items-center"
+          className="th-absolute th-top-3 th-right-3 group-focus:th-opacity-100 th-bottom-0 th-items-center"
           onClick={handleAddItem}
         >
           <AddIcon path="th-fill-Secondary-1" rect="th-fill-white" />

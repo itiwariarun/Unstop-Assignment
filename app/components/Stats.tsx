@@ -19,7 +19,7 @@ const Stats = (props: Props) => {
         <IconChip
           className="th-bg-Accent-Purple-Light"
           heading="Total Assesssment"
-          title={items.length || 0}
+          title={items.length || "00"}
           icon={
             <AssessmentStack
               rect="th-fill-white"
@@ -27,7 +27,7 @@ const Stats = (props: Props) => {
             />
           }
         >
-          <ChipText title={items.length || 0} />
+          <ChipText title={items.length || "00"} />
         </IconChip>
       </div>
       <div className="th-order-3">
@@ -77,7 +77,7 @@ const Stats = (props: Props) => {
           heading="Total Purpose"
           icon={<Share rect="th-fill-white" path="th-fill-Secondary-1" />}
         >
-          <ChipText title={purpose.length} />
+          <ChipText title={purpose.length || "00"} />
         </IconChip>
       </div>
     </div>
