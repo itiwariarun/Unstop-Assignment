@@ -15,8 +15,8 @@ import { purpose, question } from "./../utils/data";
 interface IAppProps {
   isOpen?: boolean;
   setIsOpen?: Dispatch<SetStateAction<ParentComponentState>>;
-  setAssessments: Dispatch<SetStateAction<Assessment[]>>;
-  assessments: Assessment[];
+  setAssessments?: Dispatch<SetStateAction<Assessment[]>>;
+  assessments?: Assessment[];
   index?: number;
 }
 
