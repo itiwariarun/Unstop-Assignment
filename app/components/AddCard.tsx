@@ -2,7 +2,12 @@
 import React, { useState } from "react";
 import { AddIcon } from "./Icon";
 import FormModal from "./FormModal";
-interface IAppProps {}
+import { Assessment } from "../page";
+
+interface IAppProps {
+  assessments?: Assessment[];
+  setAssessments?: any;
+}
 
 const AddCard: React.FunctionComponent<IAppProps> = (props) => {
   let [isOpen, setIsOpen] = useState<boolean>(false);

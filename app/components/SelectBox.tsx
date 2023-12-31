@@ -12,6 +12,7 @@ interface IAppProps {
   label?: string;
   placeHolder?: string;
   defaultValue?: string;
+  items?: any;
 }
 
 const SelectBox: React.FunctionComponent<IAppProps> = (props) => {
@@ -27,14 +28,8 @@ const SelectBox: React.FunctionComponent<IAppProps> = (props) => {
       >
         {props.label}
       </label>
-      <Listbox
-        className="th-w-full"
-        name={props.name}
-        id={props.id}
-        value={selected}
-        onChange={setSelected}
-      >
-        <div className="th-relative th-mt-1">
+      <Listbox name={props.name} value={selected} onChange={setSelected}>
+        <div className="th-relative th-w-full th-mt-1">
           <Listbox.Button className="th-relative th-w-full th-cursor-default th-rounded-lg th-bg-white th-py-4 th-pl-4 th-pr-12 th-text-left th-border th-border-System-stroke2 focus:th-ring-1 focus:th-ring-offset-4 th-ring-Text-100 focus:th-outline-none focus-visible:th-border-indigo-500 focus-visible:th-ring-2 focus-visible:th-ring-white/75 focus-visible:th-ring-offset-2 focus-visible:th-ring-offset-orange-300 sm:th-text-sm">
             <span className="th-block th-truncate th-leading-normal th-font-medium th-text-Text-100">
               {selected !== null ? selected : props.placeHolder}
@@ -51,7 +46,7 @@ const SelectBox: React.FunctionComponent<IAppProps> = (props) => {
           >
             <Listbox.Options className="th-absolute th-gap-y-1 th-flex th-flex-col th-border-Text-100 th-border-spacing-4 th-border th-mt-1 th-z-20 th-max-h-60 th-w-full th-overflow-auto th-rounded-md th-bg-amber-50 th-py-1 th-text-base th-shadow-lg th-ring-1 th-ring-Text-100 focus:th-outline-none sm:th-text-sm">
               {isValidArray(props.items) &&
-                props.items.map((item, itemIdx) => (
+                props.items.map((item: any, itemIdx: any) => (
                   <Listbox.Option
                     key={itemIdx}
                     className={({ active }) =>

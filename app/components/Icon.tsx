@@ -79,11 +79,11 @@ export const Share: React.FunctionComponent<IAppProps> = (props) => {
 export const CircleChip: React.FunctionComponent<IAppProps> = (props) => {
   return (
     <div
-      style={{ backgroundColor: generateColor(props.title) }}
+      style={{ backgroundColor: generateColor(props?.title || "Null") }}
       className="th-h-[1.875rem] th-w-[1.875rem] th-min-h-full th-flex th-justify-center th-items-center th-rounded-full"
     >
       <p className="th-text-white th-text-sm th-leading-normal th-font-bold">
-        {printFirstLetters(props.title)}
+        {printFirstLetters(props?.title as any)}
       </p>
     </div>
   );
@@ -130,7 +130,6 @@ export const Assessment: React.FunctionComponent<IAppProps> = (props) => {
       >
         <mask
           id="mask0_0_871"
-          style={{ "mask-type": "alpha" }}
           maskUnits="userSpaceOnUse"
           x="0"
           y="0"
@@ -161,7 +160,6 @@ export const Library: React.FunctionComponent<IAppProps> = (props) => {
       >
         <mask
           id="mask0_0_877"
-          style={{ "mask-type": "alpha" }}
           maskUnits="userSpaceOnUse"
           x="0"
           y="0"
@@ -192,7 +190,6 @@ export const RoundStatus: React.FunctionComponent<IAppProps> = (props) => {
       >
         <mask
           id="mask0_0_905"
-          style={{ "mask-type": "alpha" }}
           maskUnits="userSpaceOnUse"
           x="0"
           y="0"

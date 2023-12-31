@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
 export interface IAppProps {
-  chidlren: ReactNode;
+  children: ReactNode;
   className?: string;
 }
 

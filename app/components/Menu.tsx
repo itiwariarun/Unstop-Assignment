@@ -3,7 +3,10 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { IconStack } from "./Icon";
 import React from "react";
 
-type Props = {};
+type Props = {
+  editModal?: any;
+  deleteHandle?: any;
+};
 
 const MenuItems = (props: Props) => {
   return (
@@ -71,7 +74,7 @@ const MenuItems = (props: Props) => {
   );
 };
 
-function EditInactiveIcon(props) {
+function EditInactiveIcon(props: any) {
   return (
     <svg
       {...props}
@@ -89,7 +92,7 @@ function EditInactiveIcon(props) {
   );
 }
 
-function DeleteInactiveIcon(props) {
+function DeleteInactiveIcon(props: any) {
   return (
     <svg
       {...props}

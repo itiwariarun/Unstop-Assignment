@@ -1,23 +1,23 @@
 "use client";
-import React, { Dispatch, SetStateAction, useEffect } from "react";
+import React, { Dispatch, SetStateAction, useEffect, FormEvent } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { IconCross } from "./Icon";
 import SelectBox from "./SelectBox";
 import Input from "./Input";
 import MutliSelectInput from "./MutliSelectInput";
-import { addToLocalStorage } from "../utils/random-functions";
-import { Assessment } from "../page";
 import useLocalStorageList from "../utils/random-functions";
 import { isValidArray, isValidObject } from "./../utils/random-functions";
 import { purpose, question } from "./../utils/data";
+import { Assessment } from "./../page";
 
 interface IAppProps {
   isOpen?: boolean;
-  setIsOpen?: Dispatch<SetStateAction<ParentComponentState>>;
+  setIsOpen?: Dispatch<SetStateAction<any>> | any;
   setAssessments?: Dispatch<SetStateAction<Assessment[]>>;
   assessments?: Assessment[];
   index?: number;
+  defaultValue?: Assessment;
 }
 
 const FormModal: React.FunctionComponent<IAppProps> = (props) => {
@@ -25,11 +25,10 @@ const FormModal: React.FunctionComponent<IAppProps> = (props) => {
     props.setIsOpen(false);
   }
   const isEditing = typeof props.index !== "undefined";
-  const defaultStates = isValidObject(props.defaultValue)
-    ? props.defaultValue
-    : {};
+  const defaultStates =
+    isValidObject(props.defaultValue) && (props.defaultValue as any);
   const [itemsList, setItemsList] = useState<string[]>(
-    defaultStates.itemsList || []
+    (defaultStates.itemsList as any) || []
   );
   const [formData, setFormData] = useState(defaultStates); // State to hold form data
   const { addItem, removeItem, refetchList, updateItem } =
@@ -46,7 +45,7 @@ const FormModal: React.FunctionComponent<IAppProps> = (props) => {
       setIsLoading(true);
 
       const formData = new FormData(event.currentTarget);
-      const formDataObject = {};
+      const formDataObject = {} as any;
       formData.forEach((value, key) => {
         formDataObject[key] = value;
       });
@@ -127,7 +126,7 @@ const FormModal: React.FunctionComponent<IAppProps> = (props) => {
                         placeHolder="Type Here"
                         name="assessment_name"
                         label=" Name of assessment"
-                        defaultValue={formData.assessment_name || ""} // Set the value explicitly
+                        defaultValue={formData?.assessment_name || ""} // Set the value explicitly
                       />
                       <SelectBox
                         name="purpose"

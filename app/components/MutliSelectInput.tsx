@@ -1,5 +1,5 @@
 "use Client";
-import React, { useState } from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 import Input from "./Input";
 import { AddIcon, IconCrossSmall } from "./Icon";
 import Chip from "./Chip";
@@ -9,24 +9,25 @@ interface IAppProps {
   label?: string;
   layoutClass?: string;
   items: string[];
-  setItems: Dispatch<SetStateAction<string[]>>; // Define the type for setItems
+  defaultValue?: any;
+  setItems: Dispatch<SetStateAction<string[]>> | any; // Define the type for setItems
 }
 
 const MutliSelectInput: React.FunctionComponent<IAppProps> = (props) => {
   const [inputValue, setInputValue] = useState("");
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: any) => {
     setInputValue(event.target.value);
   };
 
   const handleAddItem = () => {
     if (inputValue.trim() !== "") {
-      props.setItems((prevItems) => [...prevItems, inputValue]);
+      props.setItems((prevItems: any) => [...prevItems, inputValue]);
       setInputValue("");
     }
   };
 
-  const handleRemoveItem = (index) => {
+  const handleRemoveItem = (index: any) => {
     const newItems = [...props.items];
     newItems.splice(index, 1);
     props.setItems(newItems);

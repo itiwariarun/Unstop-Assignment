@@ -12,6 +12,10 @@ interface IAppProps {
   step?: string | number;
   onFocus?: (event: FocusEvent) => void;
   onBlur?: (event: FocusEvent) => void;
+  defaultValue?: any;
+  value?: any;
+  onChange?: any;
+  rest?: any;
 }
 
 const Input: React.FunctionComponent<IAppProps> = (props) => {

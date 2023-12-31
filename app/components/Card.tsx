@@ -18,6 +18,12 @@ interface IAppProps {
     duration: string;
     description: string;
     purpose: string;
+    itemsList?: [
+      {
+        name?: string;
+        unavailable?: boolean;
+      }
+    ];
   };
 }
 
@@ -34,7 +40,7 @@ const Card: React.FunctionComponent<IAppProps> = (props) => {
   const currentDate = new Date();
   const options = { day: "numeric", month: "short", year: "numeric" };
 
-  const formattedDate = currentDate.toLocaleDateString("en-US", options);
+  const formattedDate = currentDate.toLocaleDateString("en-US", options as any);
   const list = props.assessment.itemsList;
 
   const minutes = timeToHoursAndMinutes(props?.assessment?.duration);
@@ -101,16 +107,20 @@ const Card: React.FunctionComponent<IAppProps> = (props) => {
                 <span>Share</span>
               </button>
               <div className="th-relative th-group th-flex th-gap-1 th-items-center">
-                {isValidArray(list) &&
-                  list.slice(0, 3).map((item, index) => (
+                {isValidArray(list as any) &&
+                  list?.slice(0, 3)?.map((item, index) => (
                     <div key={index} className="first:th-ml-0 -th-ml-5">
-                      <CircleChip title={item} />
+                      <CircleChip title={item as any} />
                     </div>
                   ))}
                 {"   "}
                 <span className="th-text-xs">
                   {" "}
-                  {`${list.length > 2 ? `+${list.length - 2}` : ""}`}
+                  {`${
+                    (list?.length as any) > 2
+                      ? `+${(list?.length as any) - 2}`
+                      : ""
+                  }`}
                 </span>
               </div>
             </div>
@@ -120,7 +130,7 @@ const Card: React.FunctionComponent<IAppProps> = (props) => {
       <FormModal
         setIsOpen={setIsOpen}
         isOpen={isOpen}
-        defaultValue={props.assessment}
+        defaultValue={props.assessment as any}
         index={props.index}
       />
     </>

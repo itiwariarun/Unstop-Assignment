@@ -1,13 +1,14 @@
 import { ReactNode } from "react";
 
 interface IAppProps {
-  title?: string;
+  title?: string | number;
   icon?: ReactNode;
   subTitle?: string;
   children?: ReactNode;
   positiveChange?: string;
   negativeChange?: string;
   heading?: string;
+  className?: string;
   type?: string;
   iconLayout?: string;
 }

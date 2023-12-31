@@ -3,6 +3,7 @@ import { AssessmentStack, UserIcon, WebIcon, Share } from "./Icon";
 import IconChip, { ChipText } from "./IconChip";
 import useLocalStorageList from "../utils/random-functions";
 import { purpose } from "../utils/data";
+import { Assessment } from "./../page";
 
 type Props = {};
 

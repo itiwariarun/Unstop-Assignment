@@ -23,7 +23,6 @@ const config: Config = {
         "System-stroke2": "#DADCE0",
         "Text-100": "#1C4980",
         White: "#ffffff",
-        "Primary-50": "#8DA4BF",
         "Accent-new-Red": "#D63500",
         "Status-Success": "#05c165",
         "Accent-Pink": "#E9407A",
